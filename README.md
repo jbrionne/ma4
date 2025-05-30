@@ -1,6 +1,6 @@
 # ma4
 
-ma4 = multiagent for ...:
+ma4 = multiagent for ...
 
 - Summarize the technical conferences from a playlist, create a ranking, and display it as an HTML page.
 
