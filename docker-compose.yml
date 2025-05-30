@@ -1,0 +1,21 @@
+services:
+  crewai-program:
+    #entrypoint: ['sh', '-c', 'echo Container 1 is Running ; sleep 3600']
+    build:
+      context: .
+      shm_size: '2gb'
+      args:
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
+    image: crewai-program:0.0.1
+    container_name: crewai-program
+    env_file: "./ma4/.env"
+    environment:
+      - PLAYLIST_ID=$PLAYLIST_ID
+    volumes:
+      - ./ma4:/home/techuser/ma4
+      - ./work:/home/techuser/work
+    ports:
+      - "7900:7900"
+      - "5900:5900"
+      - "4444:4444"
